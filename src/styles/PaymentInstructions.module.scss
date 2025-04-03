@@ -1,0 +1,73 @@
+
+.line {
+  margin: 16px 0px;
+  width: 100%;
+  height: 1px;
+  background-color: #222529;
+}
+
+.instructionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding: 10px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 34px;
+    height: calc(100% - 120px);
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.instructionStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: white;
+  position: relative;
+  animation: stepAppear 0.5s ease forwards;
+  animation-delay: calc(var(--step-index) * 0.1s);
+  opacity: 0;
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  background-color: #222529;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stepContent {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-top: 6px;
+}
+
+.link {
+  color: #228E5D;
+  text-decoration: underline;
+}
+
+@keyframes stepAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
