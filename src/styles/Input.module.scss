@@ -10,22 +10,36 @@
   border: 2px solid #222529;
   border-radius: 8px;
   color: #7c7f84;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 16px;
   outline: none;
   transition: all 0.2s ease-in-out;
-
+  position: relative;
+  font-family: 'Susse Int Book', sans-serif;
+  caret-color: #3377FF;
   &::placeholder {
     color: #7c7f84;
   }
 
   &:focus {
+    color: white;
     border-color: #00a76f;
     & + .iconContainer {
       background-color: #00a76f;
 
       &:hover {
         background-color: #1c754d;
+      }
+    }
+    & + .rub {
+      background-color: transparent;
+
+      svg path {
+        fill: #228E5D;
+      }
+
+      &::after {
+        opacity: 1;
       }
     }
   }
@@ -58,9 +72,7 @@
 .rub {
   position: absolute;
   right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
+  top: 4px;
   border-radius: 8px;
   width: 35px;
   height: 35px;
@@ -68,4 +80,33 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in-out;
+  background-color: #222529;
+  overflow: hidden;
+
+  svg {
+    transition: color 0.2s ease-in-out;
+    path {
+      fill: white;
+      transition: fill 0.2s ease-in-out;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(
+      circle at bottom right,
+      #228E5D 0%,
+      rgba(34, 142, 93, 0.3) 50%,
+      transparent 70%
+    );
+    filter: blur(4px);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
 }

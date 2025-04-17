@@ -7,15 +7,22 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:types": "npx @openapitools/openapi-generator-cli generate --generator-key dev"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.71.1",
     "@telegram-apps/sdk-react": "^3.1.7",
+    "@types/socket.io-client": "^1.4.36",
+    "@vkruglikov/react-telegram-web-app": "^2.1.9",
+    "axios": "^1.8.4",
     "classnames": "^2.5.1",
+    "qr-code-styling": "^1.9.2",
+    "qrcode.react": "^4.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.86.1",
+    "socket.io-client": "^4.8.1",
     "styled-components": "^6.1.16",
     "zustand": "^5.0.3"
   },

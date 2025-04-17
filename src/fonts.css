@@ -3,7 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400..900&display=swap');
 @font-face {
   font-family: 'Susse Int';
-  src: url('/assetsfonts/susse-int-regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('./assets/fonts/SuisseIntl-Medium.otf') format('opentype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Susse Int Book';
+  src: url('./assets/fonts/SuisseIntl-Book.otf') format('opentype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Susse Int SemiBold';
+  src: url('./assets/fonts/SuisseIntl-SemiBold.otf') format('opentype');
   font-style: normal;
 }

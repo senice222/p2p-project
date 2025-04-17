@@ -5,7 +5,7 @@ interface SkeletonProps {
   className?: string;
 }
 
-export const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
+export const Skeleton: React.FC<SkeletonProps> = () => {
   return (
     <div className={styles.skeleton}>
       <div className={styles.avatar}></div>

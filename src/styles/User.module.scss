@@ -37,13 +37,14 @@
     font-size: 16px;
     color: #228E5D;
     font-weight: 450;
-    text-decoration: underline;
+    // text-decoration: underline;
   }
 }
 
 .username {
-  font-size: 18px;
-  font-weight: 500;
+  font-family: 'Susse Int Book', sans-serif;
+  font-size: 16px;
+  font-weight: 450;
   color: #fff;
 }
 
@@ -56,4 +57,14 @@
   &:hover {
     color: #FFFFFF;
   }
+}
+
+.avatarSkeleton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2C2F33;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }

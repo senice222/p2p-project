@@ -1,0 +1,135 @@
+.commonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  // padding-top: 80px;
+  width: 100%;
+
+  .titleWrapper {
+    text-align: center;
+    height: 70px; // Фиксированная высота для заголовков
+  }
+
+  .paymentsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 358px;
+  }
+
+  .buttonContainer {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 358px;
+  }
+}
+
+.paymentMethod {
+  background: #0F1114;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  position: relative;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // &:hover {
+  //   background: #2A2D31;
+  // }
+
+  &.selected {
+    border-color: #00A76F;
+    background: #1A1C1F;
+  }
+}
+
+.paymentContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.iconContainer {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  img {
+    // height: 24px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+.multipleIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  .twoIcons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      height: 16px;
+    }
+  }
+
+  img {
+    height: 12px;
+
+    &:first-child {
+      height: 16px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .bottomRow {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.discount {
+  position: absolute;
+  top: 4px;
+  border-radius: 4px;
+  right: 6px;
+  background: #228E5D1A;
+  backdrop-filter: blur(16px);
+  color: #228E5D;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.qrIcon, .phoneIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

@@ -1,10 +1,15 @@
-.searchContainer {
+.commonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  // padding-top: 80px;
   width: 100%;
+
+  .titleWrapper {
+    text-align: center;
+    height: 70px; // Фиксированная высота для заголовков
+  }
 
   .inputContainer {
     margin-top: 24px;

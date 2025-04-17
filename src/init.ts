@@ -1,8 +1,8 @@
 import {
-  backButton,
-  themeParams,
-  miniApp,
-  initData,
+  // backButton,
+  // themeParams,
+  // miniApp,
+  // initData,
   init as initSDK,
   postEvent,
 } from "@telegram-apps/sdk-react";
@@ -16,24 +16,18 @@ export function init(): void {
   initSDK();
   postEvent("web_app_setup_swipe_behavior", { allow_vertical_swipe: false });
 
-  // Check if all required components are supported.
-  if (!backButton.isSupported() || !miniApp.isSupported()) {
-    throw new Error("ERR_NOT_SUPPORTED");
-  }
+  // // Check if all required components are supported.
+  // if (!backButton.isSupported() || !miniApp.isSupported()) {
+  //   throw new Error("ERR_NOT_SUPPORTED");
+  // }
 
-  // Mount all components used in the project.
-  backButton.mount();
-  miniApp.mount();
+  // // Mount all components used in the project.
+  // backButton.mount();
+  // miniApp.mount();
 
-  themeParams.mount();
-  initData.restore();
+  // themeParams.mount();
+  // initData.restore();
 
-  miniApp.bindCssVars();
-  themeParams.bindCssVars();
+  // miniApp.mount()
+  // themeParams.mount()
 }
-
-const isMobile = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-};

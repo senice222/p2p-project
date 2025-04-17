@@ -1,0 +1,224 @@
+.commonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  // padding-top: 0px;
+  width: 100%;
+  // height: var(--tg-viewport-stable-height, 100vh);
+  // max-height: var(--tg-viewport-stable-height, 100vh);
+  overflow-y: auto;
+  position: relative; // Добавляем для правильного позиционирования
+  background-color: transparent; /* Обеспечиваем прозрачный фон */
+
+  /* Полностью скрываем скроллбар для WebKit (Chrome, Safari) */
+
+  .titleWrapper {
+    text-align: center;
+    height: 70px; // Фиксированная высота для заголовков
+    flex-shrink: 0;
+    margin-bottom: 8px;
+  }
+
+  .orderInfoContainer {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 24px;
+  }
+
+  .infoBlock {
+    background: #0F1114;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin: 16px;
+    border-bottom: 1px solid #222529;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  .ratingSection {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
+  }
+
+  .ratingButtons {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .ratingButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 72px;
+    background-color: #292D32;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    .flippedIcon {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      background-color: #1A1C1F;
+    }
+
+    &.active {
+      &:first-child {
+        background-color: #001F14;
+        border: 1px solid #00A76F;
+        svg path {
+          stroke: #00A76F;
+        }
+      }
+      &:last-child {
+        background-color: #1A1C1F;
+        svg path {
+          stroke: #FFF;
+        }
+      }
+    }
+  }
+
+  .reviewSection {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
+    position: relative; // Для правильного позиционирования текстового поля
+  }
+
+  .reviewTextarea {
+    width: 100%;
+    height: 110px;
+    background-color: #0F1114;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    padding: 16px;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none; /* удаляем системные стили */
+    -webkit-appearance: none;
+    overscroll-behavior: none; /* предотвращаем эффект прыжка */
+
+    &::placeholder {
+      color: #424850;
+    }
+  }
+
+  .buttonContainer {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
+  }
+
+  .supportContainer {
+    width: 100%;
+    max-width: 400px;
+    margin-top: auto;
+    margin-bottom: 50px;
+  }
+
+  .supportLink {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF0A;
+    // backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 16px; /* Увеличиваем радиус углов */
+    padding: 18px 20px; /* Увеличиваем внутренние отступы */
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+
+    /* Более тонкая внутренняя тень для эффекта стекла */
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .supportIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px; /* Увеличиваем расстояние от иконки до текста */
+    opacity: 0.8;
+  }
+
+  .supportUsername {
+    font-size: 16px;
+    margin-left: auto;
+    color: #fff !important;
+    font-weight: 450 !important;
+    letter-spacing: 0.2px;
+    position: relative;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    /* Добавляем градиентный фон */
+    color: #fff !important; /* Делаем имя пользователя белым */
+    font-weight: 450 !important; /* Немного увеличиваем жирность */
+    letter-spacing: 0.2px; /* Слегка разреживаем буквы */
+  }
+}
+
+.labelMarginBottom {
+  margin-bottom: 16px;
+}
+
+.discountWrapper {
+  border-radius: 4px;
+  background: #228e5d1a;
+  backdrop-filter: blur(16px);
+  color: #228e5d;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px;
+  margin-left: 8px;
+}
+
+.cancelButton {
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, rgba(34, 142, 93, 0.2) 0%, rgba(34, 142, 93, 0) 100%);
+  border-image-slice: 1;
+  background-color: transparent;
+  color: #00A76F;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+  .commonContainer {
+    overscroll-behavior: none; /* предотвращаем скролл-эффекты на мобильных */
+    height: auto;
+
+    .reviewTextarea {
+      position: relative;
+      z-index: 2;
+    }
+
+    .buttonContainer {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

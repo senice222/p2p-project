@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.10.0",
+    "generators": {
+      "dev": {
+        "inputSpec": "https://market.vivaldi-development.online/market/openapi.json",
+        "generatorName": "typescript-axios",
+        "output": "./src/shared/api",
+        "skipValidateSpec": true,
+        "additionalProperties": {
+          "useSingleRequestParameter": true,
+          "withSeparateModelsAndApi": true,
+          "stringEnums": true
+        },
+        "modelPackage": "models",
+        "apiPackage": "api"
+      }
+    }
+  }
+}
